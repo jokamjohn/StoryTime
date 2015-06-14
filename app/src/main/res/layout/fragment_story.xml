@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="me.johnkagga.storytime.StoryActivityFragment">
+    tools:context="me.johnkagga.storytime.StoryActivityFragment"
+    android:background="@android:color/white">
 
     <ImageView
         android:id="@+id/storyImageView"

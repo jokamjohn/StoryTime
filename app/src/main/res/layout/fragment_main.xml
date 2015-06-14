@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context=".MainActivityFragment">
+    tools:context=".MainActivityFragment"
+    android:background="@android:color/white">
 
 
     <ImageView
@@ -25,7 +26,9 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:text="@string/start_button" />
+        android:text="@string/start_button"
+        android:background="@android:color/white"
+        android:textColor="#FF3A8AEC" />
 
     <EditText
         android:id="@+id/editText"
@@ -39,5 +42,5 @@
         android:inputType="textPersonName"
         android:maxLength="30"
         android:lines="1"
-        android:contentDescription="your name" />
+        />
 </RelativeLayout>
