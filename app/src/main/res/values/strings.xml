@@ -7,4 +7,5 @@
     <string name="edit_name">Enter your Name to Begin</string>
     <string name="title_activity_story">Stories</string>
     <string name="key_name">name</string>
+    <string name="image_desc">story Image</string>
 </resources>
