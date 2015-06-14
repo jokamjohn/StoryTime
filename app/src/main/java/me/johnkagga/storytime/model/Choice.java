@@ -7,6 +7,14 @@ public class Choice {
     private String mText;
     private int mNextPage;
 
+    /*
+    setting the constructors
+     */
+    public Choice(String text, int nextPage) {
+        mText = text;
+        mNextPage = nextPage;
+    }
+
     public String getText() {
         return mText;
     }
