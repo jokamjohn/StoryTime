@@ -32,14 +32,18 @@ public class MainActivityFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String name = mEditText.getText().toString();
-                startStory ();
+                startStory (name);
             }
         });
         return rootVeiw;
     }
 
-    private void startStory () {
+    /*
+    New story method that calls the new activity
+     */
+    private void startStory (String name) {
         Intent storyIntent = new Intent(getActivity(),StoryActivity.class);
+        storyIntent.putExtra("name",name);
         startActivity(storyIntent);
     }
 }
