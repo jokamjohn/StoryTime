@@ -8,12 +8,21 @@ public class Page {
     private String mText;
     private Choice mChoice1;
     private Choice mChoice2;
+    private boolean mIsFinal = false; //boolean flag to show the last or ongoing stories
 
     public Page(int imageId, String text, Choice choice1, Choice choice2) {
         mImageId = imageId;
         mText = text;
         mChoice1 = choice1;
         mChoice2 = choice2;
+    }
+
+    public Page(int imageId, String text) {
+        mImageId = imageId;
+        mText = text;
+        mChoice1 = null;
+        mChoice2 =null;
+        mIsFinal = true;
     }
 
     public int getImageId() {
