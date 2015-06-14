@@ -56,4 +56,12 @@ public class Page {
     public void setChoice2(Choice choice2) {
         mChoice2 = choice2;
     }
+
+    public boolean isFinal() {
+        return mIsFinal;
+    }
+
+    public void setIsFinal(boolean isFinal) {
+        mIsFinal = isFinal;
+    }
 }
