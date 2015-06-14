@@ -27,10 +27,10 @@ public class StoryActivityFragment extends Fragment {
 
         Intent intent = getActivity().getIntent();
         String name = intent.getStringExtra(getString(R.string.key_name));
-        Log.d(LOG_TAG,name);
         if (name == null){
             name = "friend";
         }
+        Log.v(LOG_TAG, name);
 
         return rootVeiw;
     }
