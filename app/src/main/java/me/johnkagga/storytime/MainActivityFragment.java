@@ -43,7 +43,7 @@ public class MainActivityFragment extends Fragment {
      */
     private void startStory (String name) {
         Intent storyIntent = new Intent(getActivity(),StoryActivity.class);
-        storyIntent.putExtra("name",name);
+        storyIntent.putExtra(getString(R.string.key_name),name);
         startActivity(storyIntent);
     }
 }

@@ -6,4 +6,5 @@
     <string name="start_button">Start your Adventure</string>
     <string name="edit_name">Enter your Name to Begin</string>
     <string name="title_activity_story">Stories</string>
+    <string name="key_name">name</string>
 </resources>
