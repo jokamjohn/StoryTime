@@ -13,7 +13,28 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:src="@drawable/main_title"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"/>
+        android:contentDescription="@string/detail_image"
+        android:scaleType="fitXY"
+        android:src="@drawable/main_title" />
+
+    <Button
+        android:id="@+id/startbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/start_button" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/startbutton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:ems="10"
+        android:hint="@string/edit_name"
+        android:inputType="textPersonName" />
 </RelativeLayout>
