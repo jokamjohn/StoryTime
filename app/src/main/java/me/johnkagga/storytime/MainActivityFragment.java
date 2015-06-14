@@ -1,13 +1,13 @@
 package me.johnkagga.storytime;
 
-import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 
 /**
@@ -32,10 +32,14 @@ public class MainActivityFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String name = mEditText.getText().toString();
-                Toast.makeText(getActivity(),name,Toast.LENGTH_SHORT).show();
+                startStory ();
             }
         });
-
         return rootVeiw;
+    }
+
+    private void startStory () {
+        Intent storyIntent = new Intent(getActivity(),StoryActivity.class);
+        startActivity(storyIntent);
     }
 }
