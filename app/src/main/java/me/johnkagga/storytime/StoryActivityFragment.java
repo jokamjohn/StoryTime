@@ -30,6 +30,7 @@ public class StoryActivityFragment extends Fragment {
     private TextView mTextView;
     private Button mButtonChoice1;
     private Button mButtonChoice2;
+    private String mName;
 
     public StoryActivityFragment() {
     }
@@ -40,11 +41,11 @@ public class StoryActivityFragment extends Fragment {
         View rootVeiw = inflater.inflate(R.layout.fragment_story, container, false);
 
         Intent intent = getActivity().getIntent();
-        String name = intent.getStringExtra(getString(R.string.key_name));
-        if (name == null){
-            name = "friend";
+        mName = intent.getStringExtra(getString(R.string.key_name));
+        if (mName == null){
+            mName = "friend";
         }
-        Log.v(LOG_TAG, name);
+        Log.v(LOG_TAG, mName);
 
         mImageView = (ImageView)rootVeiw.findViewById(R.id.storyImageView);
         mTextView = (TextView)rootVeiw.findViewById(R.id.storyTextView);
@@ -60,7 +61,11 @@ public class StoryActivityFragment extends Fragment {
         //setting the drawable
         Drawable drawable = ResourcesCompat.getDrawable(getResources(),page.getImageId(),null);
         mImageView.setImageDrawable(drawable);
-        mTextView.setText(page.getText());
+        // adding the name to the text in the story
+        String pageText = page.getText();
+        pageText = String.format(pageText, mName);
+        mTextView.setText(pageText);
+
         mButtonChoice1.setText(page.getChoice1().getText());
         mButtonChoice2.setText(page.getChoice2().getText());
 
