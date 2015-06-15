@@ -46,4 +46,13 @@ public class MainActivityFragment extends Fragment {
         storyIntent.putExtra(getString(R.string.key_name),name);
         startActivity(storyIntent);
     }
+
+    /*
+    when the activity comes back to life we remove the name and empty the edit text
+     */
+    @Override
+    public void onResume() {
+        super.onResume();
+        mEditText.setText("");
+    }
 }
