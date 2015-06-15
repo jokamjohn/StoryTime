@@ -52,6 +52,8 @@ public class StoryActivityFragment extends Fragment {
         mButtonChoice1 = (Button)rootVeiw.findViewById(R.id.choiceButton1);
         mButtonChoice2 = (Button)rootVeiw.findViewById(R.id.choicebutton2);
 
+        loadPage();
+
         return rootVeiw;
     }
 
