@@ -52,14 +52,15 @@ public class StoryActivityFragment extends Fragment {
         mButtonChoice1 = (Button)rootVeiw.findViewById(R.id.choiceButton1);
         mButtonChoice2 = (Button)rootVeiw.findViewById(R.id.choicebutton2);
 
-        loadPage();
+        //loads the first page when the app starts
+        loadPage(0);
 
         return rootVeiw;
     }
 
-    public void loadPage () {
+    public void loadPage (int choice) {
         //getting the page
-        Page page = mStory.getPage(0);
+        Page page = mStory.getPage(choice);
         //setting the drawable
         Drawable drawable = ResourcesCompat.getDrawable(getResources(),page.getImageId(),null);
         mImageView.setImageDrawable(drawable);
