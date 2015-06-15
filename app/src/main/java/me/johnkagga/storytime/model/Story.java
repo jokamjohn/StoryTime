@@ -52,4 +52,12 @@ public class Story {
                );
 
     }
+
+    /*
+    method that returns a page
+     */
+
+    public Page getPage(int pageNumber) {
+        return mPages[pageNumber];
+    }
 }
