@@ -70,24 +70,41 @@ public class StoryActivityFragment extends Fragment {
         pageText = String.format(pageText, mName);
         mTextView.setText(pageText);
 
-        mButtonChoice1.setText(mCurrentPage.getChoice1().getText());
-        mButtonChoice2.setText(mCurrentPage.getChoice2().getText());
+        if (mCurrentPage.isFinal()){
+            //if its the final page hide button1 and show text on button 2
+            mButtonChoice1.setVisibility(View.INVISIBLE);
+            mButtonChoice2.setText(R.string.play_button);
+            mButtonChoice2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    /*
+                    since we get to this activity through an intent we just call the
+                    finish method to end and go back
+                     */
+                    getActivity().finish();
+                }
+            });
+        }
+        else {
+            mButtonChoice1.setText(mCurrentPage.getChoice1().getText());
+            mButtonChoice2.setText(mCurrentPage.getChoice2().getText());
 
-        mButtonChoice1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int nextpage = mCurrentPage.getChoice1().getNextPage();
-                loadPage(nextpage);
-            }
-        });
+            mButtonChoice1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int nextpage = mCurrentPage.getChoice1().getNextPage();
+                    loadPage(nextpage);
+                }
+            });
 
-        mButtonChoice2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int nextpage = mCurrentPage.getChoice2().getNextPage();
-                loadPage(nextpage);
-            }
-        });
+            mButtonChoice2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int nextpage = mCurrentPage.getChoice2().getNextPage();
+                    loadPage(nextpage);
+                }
+            });
+        }
 
     }
 }
