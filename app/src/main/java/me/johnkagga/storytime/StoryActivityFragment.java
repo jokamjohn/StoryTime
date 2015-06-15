@@ -31,6 +31,7 @@ public class StoryActivityFragment extends Fragment {
     private Button mButtonChoice1;
     private Button mButtonChoice2;
     private String mName;
+    private Page mCurrentPage;
 
     public StoryActivityFragment() {
     }
@@ -59,18 +60,34 @@ public class StoryActivityFragment extends Fragment {
     }
 
     public void loadPage (int choice) {
-        //getting the page
-        Page page = mStory.getPage(choice);
+        //getting the mCurrentPage
+         mCurrentPage = mStory.getPage(choice);
         //setting the drawable
-        Drawable drawable = ResourcesCompat.getDrawable(getResources(),page.getImageId(),null);
+        Drawable drawable = ResourcesCompat.getDrawable(getResources(), mCurrentPage.getImageId(), null);
         mImageView.setImageDrawable(drawable);
         // adding the name to the text in the story
-        String pageText = page.getText();
+        String pageText = mCurrentPage.getText();
         pageText = String.format(pageText, mName);
         mTextView.setText(pageText);
 
-        mButtonChoice1.setText(page.getChoice1().getText());
-        mButtonChoice2.setText(page.getChoice2().getText());
+        mButtonChoice1.setText(mCurrentPage.getChoice1().getText());
+        mButtonChoice2.setText(mCurrentPage.getChoice2().getText());
+
+        mButtonChoice1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int nextpage = mCurrentPage.getChoice1().getNextPage();
+                loadPage(nextpage);
+            }
+        });
+
+        mButtonChoice2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int nextpage = mCurrentPage.getChoice2().getNextPage();
+                loadPage(nextpage);
+            }
+        });
 
     }
 }
